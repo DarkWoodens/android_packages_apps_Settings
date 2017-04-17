@@ -23,14 +23,16 @@
                           android:enabled="false"
                           android:layout="@layout/xenonhd_logo_row" />
 
-        <!-- XenonOTA -->
-        <PreferenceScreen android:key="xenonota"
-                android:title="@string/xenonota_title"
-                android:summary="@string/xenonota_summary">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.xenonota"
-                    android:targetClass="com.xenonota.MainActivity" />
-        </PreferenceScreen>
+         <!-- CustomOTA App -->
+		<Preference
+        android:key="customota"
+        android:title="Xenon CustomOTA"
+        android:summary="Keep Your Xenon Up to Date!">
+        <intent
+            android:targetPackage="splusteam.center.ota.ota_center"
+            android:action="android.intent.action.MAIN"
+            android:targetClass="splusteam.center.ota.ota_center.MainActivity"/>
+          </Preference>
 
         <!-- Changelog -->
         <PreferenceScreen android:key="changelog_xenonhd"
@@ -120,6 +122,13 @@
                         android:data="https://source.android.com/security/bulletin/" />
         </PreferenceScreen>
 
+	<!-- AMT Signature -->
+        <Preference android:key="amt_credits"
+                android:enabled="false"
+                android:shouldDisableView="false"
+                android:title="Signature"
+                android:summary="(AMT) Iacob [83741] Xenon 20170417"/>
+	
         <!-- Device FCC equipment id -->
         <com.android.settings.DividerPreference
                 android:key="fcc_equipment_id"
